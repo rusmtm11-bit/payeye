@@ -1,0 +1,13 @@
+{
+  "name": "PayEye Administrative Solutions",
+  "short_name": "PayEye",
+  "description": "Administrative Management Services for businesses across the UAE.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F2EEE6",
+  "theme_color": "#122024",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}
