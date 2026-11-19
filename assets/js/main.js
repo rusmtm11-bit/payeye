@@ -2,6 +2,13 @@
 (function () {
   "use strict";
 
+  if (window.location.pathname.endsWith("/index.html")) {
+    var canonicalPath = new URL(window.location.href);
+    canonicalPath.pathname = canonicalPath.pathname.slice(0, -"index.html".length);
+    window.location.replace(canonicalPath.href);
+    return;
+  }
+
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---- Current year in footer ------------------------------------------ */
