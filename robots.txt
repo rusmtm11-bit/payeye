@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.payeye.ae/sitemap.xml
+Sitemap: https://rusmtm11-bit.github.io/payeye/sitemap.xml

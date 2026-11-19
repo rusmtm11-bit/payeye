@@ -13,17 +13,22 @@
   var toggle = document.querySelector(".nav-toggle");
   var links = document.querySelector(".nav__links");
   if (toggle && links) {
+    function setMenuOpen(open) {
+      links.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
     toggle.addEventListener("click", function () {
-      var open = links.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      document.body.style.overflow = open ? "hidden" : "";
+      setMenuOpen(toggle.getAttribute("aria-expanded") !== "true");
     });
-    links.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        links.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      });
+    links.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () { setMenuOpen(false); });
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        setMenuOpen(false);
+        toggle.focus();
+      }
     });
   }
 
@@ -57,37 +62,6 @@
     revealEls.forEach(function (el) { el.classList.add("is-in"); });
   }
 
-  /* ---- Aperture open animation on load --------------------------------- */
-  var aperture = document.querySelector(".aperture");
-  if (aperture && !reduce) {
-    var blades = aperture.querySelectorAll(".blade");
-    // start closed
-    blades.forEach(function (b) { b.style.transform = "rotate(0deg) scale(1)"; });
-    window.requestAnimationFrame(function () {
-      window.setTimeout(function () {
-        blades.forEach(function (b, i) {
-          b.style.transition = "transform 1.1s cubic-bezier(0.22,1,0.36,1) " + (i * 0.05) + "s";
-          b.style.transform = "rotate(" + (i * 45) + "deg) scale(0.62)";
-        });
-      }, 200);
-    });
-  }
-
-  /* Header brand mark micro-open on hover */
-  var brandMark = document.querySelector(".brand__mark");
-  if (brandMark && !reduce) {
-    brandMark.closest(".brand").addEventListener("mouseenter", function () {
-      brandMark.querySelectorAll(".blade").forEach(function (b, i) {
-        b.style.transform = "rotate(" + (i * 30) + "deg) scale(0.8)";
-      });
-    });
-    brandMark.closest(".brand").addEventListener("mouseleave", function () {
-      brandMark.querySelectorAll(".blade").forEach(function (b) {
-        b.style.transform = "";
-      });
-    });
-  }
-
   /* ---- Cookie notice (privacy-first, no tracking loaded) ---------------- */
   var cookie = document.querySelector(".cookie");
   if (cookie) {
@@ -113,12 +87,20 @@
       // If the placeholder endpoint hasn't been replaced, fall back to mailto.
       if (endpoint.indexOf("REPLACE_WITH") !== -1 || endpoint === "" || endpoint === "#") {
         e.preventDefault();
-        var name = (form.querySelector("[name=name]") || {}).value || "";
-        var msg = (form.querySelector("[name=message]") || {}).value || "";
+        var data = new FormData(form);
+        var fields = [
+          ["Name", "name"], ["Company", "company"], ["Email", "email"],
+          ["Phone", "phone"], ["Service", "service"]
+        ];
+        var details = fields.map(function (field) {
+          var value = data.get(field[1]);
+          return value ? field[0] + ": " + value : "";
+        }).filter(Boolean);
+        var body = details.join("\n") + "\n\n" + data.get("message");
         window.location.href =
           "mailto:hello@payeye.ae?subject=" +
-          encodeURIComponent("Website enquiry — " + name) +
-          "&body=" + encodeURIComponent(msg);
+          encodeURIComponent("Website enquiry — " + data.get("name")) +
+          "&body=" + encodeURIComponent(body);
       }
     });
   }
