@@ -22,8 +22,8 @@
   <link rel="manifest" href="../site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/styles.css?v=2" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css?v=4" />
   
 </head>
 <body>
@@ -40,7 +40,7 @@
           <li><a href="../about/">About</a></li>
           <li><a href="../process/">Process</a></li>
           <li><a href="../insights/">Insights</a></li>
-          <li><a class="btn btn--primary" href="./">Book a consultation <span class="arw">&#8594;</span></a></li>
+          <li><a class="nav__contact" href="./">Contact</a></li>
         </ul>
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
       </nav>
@@ -50,14 +50,13 @@
     <section class="page-hero">
       <div class="wrap">
         <p class="breadcrumb"><a href="../">Home</a> / Contact</p>
-        <p class="eyebrow eyebrow--tick" style="margin-top:1.4rem">Let's talk</p>
-        <h1 class="display">Let's simplify your administration.</h1>
-        <p class="lead">Tell us where the paperwork piles up. We'll get back to you within one business day.</p>
+        <h1 class="display">Contact PayEye</h1>
+        <p class="lead">Tell us what kind of administrative support your business needs.</p>
       </div>
     </section>
     <section class="section">
       <div class="wrap contact-split">
-        <div class="reveal">
+        <div class="">
           <!-- CLIENT: replace action with your Formspree/Web3Forms endpoint, e.g. https://formspree.io/f/xxxxxx
                Until you do, the form falls back to opening the visitor's email client. -->
           <p id="contact-form-note">The form prepares an email draft in your email app.</p>
@@ -87,7 +86,7 @@
             </div>
           </form>
         </div>
-        <aside class="reveal">
+        <aside class="">
           <div class="contact-card">
             <div class="row"><span>Office</span><strong>617, Liberty House, DIFC<br>Dubai, United Arab Emirates</strong></div>
             <div class="row"><span>Hours</span><strong>Sunday&#8211;Thursday<br>9:00 AM &#8211; 6:00 PM (GST)</strong></div>
@@ -100,40 +99,24 @@
   <footer class="site-foot">
     <div class="wrap">
       <div class="foot-grid">
-        <div class="foot-brand">
-          <a class="foot-brand__link" href="../"><img src="../assets/brand/payeye-dark.png" width="1004" height="348" alt="PayEye Administrative Solutions Ltd" loading="lazy" /></a>
-          <p>Administrative Management Services for businesses across Dubai and the wider UAE. Accurate. Confidential. Reliable.</p>
-        </div>
-        <div class="foot-col"><h4>Services</h4><ul>
-          <li><a href="../services/#documentation">Documentation</a></li>
-          <li><a href="../services/#hr">HR admin</a></li>
-          <li><a href="../services/#government">Government coordination</a></li>
-          <li><a href="../services/#data">Data management</a></li>
-        </ul></div>
-        <div class="foot-col"><h4>Company</h4><ul>
-          <li><a href="../about/">About</a></li>
-          <li><a href="../process/">Process</a></li>
-          <li><a href="../industries/">Industries</a></li>
-          <li><a href="../insights/">Insights</a></li>
-        </ul></div>
-        <div class="foot-col"><h4>Contact</h4><ul>
-          <li><a href="./">617, Liberty House, DIFC, Dubai</a></li>
-          <li><a href="mailto:hello@payeye.ae">hello@payeye.ae</a></li>
-        </ul></div>
+        <a class="foot-brand__link" href="../">
+          <img src="../assets/brand/payeye-dark.png" width="1004" height="348" alt="PayEye Administrative Solutions Ltd" loading="lazy" />
+        </a>
+        <address class="foot-contact">
+          <a href="mailto:hello@payeye.ae">hello@payeye.ae</a>
+          <a href="../contact/">617, Liberty House, DIFC, Dubai</a>
+        </address>
       </div>
       <div class="foot-bottom">
-        <span>&#169; <span data-year>2026</span> PayEye Administrative Solutions &#183; Dubai, UAE</span>
-        <span><a href="../privacy/">Privacy</a> &#183; <a href="../terms/">Terms</a></span>
+        <p>© <span data-year>2026</span> PayEye Administrative Solutions Ltd</p>
+        <nav aria-label="Legal">
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/">Terms</a>
+        </nav>
       </div>
     </div>
   </footer>
-  <div class="cookie" role="dialog" aria-label="Cookie notice">
-    <p>We use only essential cookies to make this site work. Nothing tracks you across the web.</p>
-    <div class="cookie__row">
-      <button class="btn btn--primary" data-cookie="essential">Okay</button>
-      <a class="btn btn--ghost" href="../privacy/">Privacy policy</a>
-    </div>
-  </div>
-  <script src="../assets/js/main.js?v=3" defer></script>
+
+  <script src="../assets/js/main.js?v=4" defer></script>
 </body>
 </html>

@@ -28,8 +28,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=2" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -66,18 +66,6 @@
     "url": "https://rusmtm11-bit.github.io/payeye/"
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"What are administrative management services?","acceptedAnswer":{"@type":"Answer","text":"Ongoing handling of the operational back office of a business — documentation and records, HR paperwork, correspondence, data management, government paperwork and drafting — delivered by an external specialist team instead of in-house staff."}},
-      {"@type":"Question","name":"Do you work with free-zone and mainland companies?","acceptedAnswer":{"@type":"Answer","text":"Yes. We support mainland and free-zone businesses with document organisation, deadline tracking and administrative follow-up, subject to applicable authorisations."}},
-      {"@type":"Question","name":"How is confidentiality handled?","acceptedAnswer":{"@type":"Answer","text":"Every engagement runs under a signed confidentiality agreement, role-based access to your data, and documented handling procedures. Your records stay yours."}},
-      {"@type":"Question","name":"How does pricing work?","acceptedAnswer":{"@type":"Answer","text":"Three models: a monthly retainer for continuous support, project-based pricing for defined scopes, and scalable on-demand hours. We scope the work first, then quote — no fixed packages."}}
-    ]
-  }
-  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -95,7 +83,7 @@
           <li><a href="about/">About</a></li>
           <li><a href="process/">Process</a></li>
           <li><a href="insights/">Insights</a></li>
-          <li><a class="btn btn--primary" href="contact/">Book a consultation <span class="arw">→</span></a></li>
+          <li><a class="nav__contact" href="contact/">Contact</a></li>
         </ul>
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
           <span></span><span></span><span></span>
@@ -105,308 +93,86 @@
   </header>
 
   <main id="main">
-    <!-- ============================ HERO ============================ -->
     <section class="hero">
       <div class="wrap hero__grid">
-        <div class="hero__copy">
-          <h1 class="display">Back-office support for businesses in Dubai.</h1>
-          <p class="lead hero__lead">PayEye organises corporate records, maintains employment paperwork and coordinates administrative follow-up with authorised service providers.</p>
+        <div>
+          <h1 class="display">Back-office support for businesses in Dubai</h1>
+          <p class="hero__lead">Corporate records, HR paperwork and administrative coordination for businesses across the UAE.</p>
           <div class="hero__cta">
             <a class="btn btn--primary" href="contact/">Book a consultation</a>
-            <a class="link-under" href="services/">Explore services</a>
+            <a class="link-under" href="#services">Explore services</a>
           </div>
         </div>
-        <nav class="hero-services" aria-label="Featured services">
-          <p>How we can help</p>
-          <ul>
-            <li><a href="services/#documentation">Corporate records</a></li>
-            <li><a href="services/#hr">HR administration</a></li>
-            <li><a href="services/#government">Government coordination</a></li>
-          </ul>
-        </nav>
+        <img class="hero__emblem" src="assets/brand/payeye-emblem.png" alt="" width="238" height="248" fetchpriority="high" />
       </div>
     </section>
 
-    <!-- ============================ ABOUT INTRO ============================ -->
-    <section class="section">
-      <div class="wrap sec-head reveal">
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap home-split">
+        <div class="home-split__intro">
+          <h2 class="display" id="services-title">How we can help</h2>
+          <a class="link-under" href="services/">View all services</a>
+        </div>
+        <ul class="home-services">
+          <li>
+            <h3><a href="services/#documentation">Corporate records</a></h3>
+            <p>Organise trade licences, company documents and signed agreements.</p>
+          </li>
+          <li>
+            <h3><a href="services/#hr">HR administration</a></h3>
+            <p>Prepare and maintain employment records, from onboarding to offboarding.</p>
+          </li>
+          <li>
+            <h3><a href="services/#government">Government coordination</a></h3>
+            <p>Track deadlines and organise documents for follow-up with authorised providers and authorities.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section home-note" aria-labelledby="industries-title">
+      <div class="wrap home-split">
+        <h2 class="display" id="industries-title">Industries we support</h2>
         <div>
-          <p class="eyebrow eyebrow--tick">Who we are</p>
-          <h2 class="display" style="margin-top:1rem;max-width:16ch">Your administrative partner in Dubai.</h2>
+          <p class="lead">We work with trading companies, professional services firms, real estate businesses, clinics, food and beverage operators, and contractors.</p>
+          <a class="link-under" href="industries/">Explore industries</a>
         </div>
-        <p class="lead sec-head__lead">Behind every well-run company is a foundation of clean records and quiet, dependable processes. PayEye builds and maintains that foundation — bridging complex UAE administrative demands and the day-to-day needs of modern businesses.</p>
-      </div>
-      <div class="wrap">
-        <a class="link-under reveal" href="about/">Read our story</a>
       </div>
     </section>
 
-    <!-- ============================ SERVICES ============================ -->
-    <section class="section" id="services">
-      <div class="wrap sec-head reveal">
+    <section class="section home-contact" aria-labelledby="contact-title">
+      <div class="wrap home-split">
+        <h2 class="display" id="contact-title">Discuss your admin needs</h2>
         <div>
-          <p class="eyebrow eyebrow--tick">What we handle</p>
-          <h2 class="display" style="margin-top:1rem;max-width:14ch">A full administrative back office.</h2>
-        </div>
-        <p class="lead sec-head__lead">Eight core disciplines, delivered as one coordinated service — or picked à la carte around the gaps in your operation.</p>
-      </div>
-      <div class="wrap services-list reveal">
-        <a class="svc" href="services/#documentation">
-          <span class="svc__idx">01</span>
-          <span class="svc__body"><h3>Corporate documentation &amp; records</h3><p>Secure organisation and version control for licences, corporate records and executed agreements.</p></span>
-          <span class="svc__arrow">→</span>
-        </a>
-        <a class="svc" href="services/#office">
-          <span class="svc__idx">02</span>
-          <span class="svc__body"><h3>Office &amp; business administration</h3><p>Correspondence, scheduling, reporting and the daily operational coordination that keeps things moving.</p></span>
-          <span class="svc__arrow">→</span>
-        </a>
-        <a class="svc" href="services/#hr">
-          <span class="svc__idx">03</span>
-          <span class="svc__body"><h3>HR administrative support</h3><p>Preparation and maintenance of employment records based on your requirements and applicable administrative procedures.</p></span>
-          <span class="svc__arrow">→</span>
-        </a>
-        <a class="svc" href="services/#government">
-          <span class="svc__idx">04</span>
-          <span class="svc__body"><h3>Government &amp; regulatory administrative coordination</h3><p>Deadline tracking, document preparation and follow-up with authorities and authorised service providers.</p></span>
-          <span class="svc__arrow">→</span>
-        </a>
-        <a class="svc" href="services/#data">
-          <span class="svc__idx">05</span>
-          <span class="svc__body"><h3>Data entry &amp; database management</h3><p>Accurate, secure data handling that keeps your business information reliable and current.</p></span>
-          <span class="svc__arrow">→</span>
-        </a>
-        <a class="svc" href="services/#correspondence">
-          <span class="svc__idx">06</span>
-          <span class="svc__body"><h3>Correspondence &amp; communication</h3><p>Professional handling of business email, client and vendor communication on your behalf.</p></span>
-          <span class="svc__arrow">→</span>
-        </a>
-        <a class="svc" href="services/#drafting">
-          <span class="svc__idx">07</span>
-          <span class="svc__body"><h3>Document drafting &amp; formatting</h3><p>Reports, letters and internal policies prepared to a clean corporate standard.</p></span>
-          <span class="svc__arrow">→</span>
-        </a>
-        <a class="svc" href="services/#custom">
-          <span class="svc__idx">08</span>
-          <span class="svc__body"><h3>Customized administrative projects</h3><p>Short-term or specialised support scoped around a specific business need.</p></span>
-          <span class="svc__arrow">→</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ============================ ADVANTAGE ============================ -->
-    <section class="section section--ink">
-      <div class="wrap sec-head reveal">
-        <div>
-          <p class="eyebrow eyebrow--tick">The PayEye advantage</p>
-          <h2 class="display" style="margin-top:1rem;max-width:16ch">Why companies hand us the back office.</h2>
-        </div>
-        <p class="lead sec-head__lead">No cookie-cutter packages, no offshore guesswork. A Dubai-based team that treats your records like its own.</p>
-      </div>
-      <div class="wrap adv-grid reveal">
-        <div class="adv">
-          <svg class="adv__ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg>
-          <h3>Confidentiality you can trust</h3>
-          <p>Signed NDAs, role-based access and documented handling. Your sensitive information stays protected at every step.</p>
-        </div>
-        <div class="adv">
-          <svg class="adv__ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
-          <h3>Precision by default</h3>
-          <p>Multi-point quality control on every task. We get it right the first time, so nothing bounces back to you.</p>
-        </div>
-        <div class="adv">
-          <svg class="adv__ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
-          <h3>Responsive &amp; reliable</h3>
-          <p>Same-day responses during business hours and consistent delivery you can plan around — not chase.</p>
-        </div>
-        <div class="adv">
-          <svg class="adv__ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 20V10M12 20V4M20 20v-8"/></svg>
-          <h3>Scales with you</h3>
-          <p>From a two-person startup to an established enterprise — add or trim scope as your operation changes.</p>
-        </div>
-        <div class="adv">
-          <svg class="adv__ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 21h18M6 21V9l6-4 6 4v12M10 21v-5h4v5"/></svg>
-          <h3>Dubai-based expertise</h3>
-          <p>Experience with corporate records and administrative workflows for Dubai businesses.</p>
-        </div>
-        <div class="adv">
-          <svg class="adv__ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          <h3>Cost-effective by design</h3>
-          <p>Skip the cost of hiring, training and covering in-house admins. Get the output without the overhead.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ PROCESS ============================ -->
-    <section class="section">
-      <div class="wrap sec-head reveal">
-        <div>
-          <p class="eyebrow eyebrow--tick">How we work</p>
-          <h2 class="display" style="margin-top:1rem;max-width:14ch">A clear path from mess to method.</h2>
-        </div>
-        <p class="lead sec-head__lead">Five steps from first call to a running back office — with visibility at every stage.</p>
-      </div>
-      <div class="wrap steps reveal">
-        <div class="step"><span class="step__num">STEP<b>01</b></span><div class="step__body"><h3>Consultation &amp; assessment</h3><p>We start with a detailed conversation to understand your business, your admin bottlenecks and the specific outcomes you need.</p></div></div>
-        <div class="step"><span class="step__num">STEP<b>02</b></span><div class="step__body"><h3>Customized proposal</h3><p>You get a tailored plan — scope, timelines and deliverables, priced against the work rather than a package.</p></div></div>
-        <div class="step"><span class="step__num">STEP<b>03</b></span><div class="step__body"><h3>Onboarding &amp; setup</h3><p>We establish clear workflows, secure systems and communication channels for a clean handover with zero disruption.</p></div></div>
-        <div class="step"><span class="step__num">STEP<b>04</b></span><div class="step__body"><h3>Ongoing delivery</h3><p>Your dedicated team executes with precision, keeping you informed through regular updates and reporting.</p></div></div>
-        <div class="step"><span class="step__num">STEP<b>05</b></span><div class="step__body"><h3>Review &amp; continuous support</h3><p>We review performance on a set cadence and adapt scope as your business evolves.</p></div></div>
-      </div>
-    </section>
-
-    <!-- ============================ COMPARISON ============================ -->
-    <section class="section">
-      <div class="wrap sec-head reveal">
-        <div>
-          <p class="eyebrow eyebrow--tick">The honest comparison</p>
-          <h2 class="display" style="margin-top:1rem;max-width:16ch">In-house admin vs. PayEye.</h2>
-        </div>
-        <p class="lead sec-head__lead">The same work, without the hiring, the training, the cover gaps or the fixed cost.</p>
-      </div>
-      <div class="wrap reveal">
-        <div class="compare-wrap">
-          <table class="compare">
-            <thead>
-              <tr><th scope="col"></th><th scope="col">In-house team</th><th scope="col" class="col-pe">With PayEye</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Monthly cost</td><td>Salaries, visas, benefits, software, desk</td><td class="col-pe">One predictable fee for the scope you use</td></tr>
-              <tr><td>Time to start</td><td>Weeks to hire, then weeks to train</td><td class="col-pe">Onboarded and running in days</td></tr>
-              <tr><td>Coverage</td><td>Gaps during leave, illness, turnover</td><td class="col-pe">Dedicated lead plus backup continuity</td></tr>
-              <tr><td>Deadline tracking</td><td>Managed internally</td><td class="col-pe">Administrative tracking of agreed deadlines</td></tr>
-              <tr><td>Scalability</td><td>Re-hire to grow, restructure to shrink</td><td class="col-pe">Adjust scope up or down when you need to</td></tr>
-              <tr><td>Quality control</td><td>Usually a single reviewer</td><td class="col-pe">Multi-point checks before anything ships</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ ENGAGEMENT MODELS ============================ -->
-    <section class="section section--tight">
-      <div class="wrap sec-head reveal">
-        <div>
-          <p class="eyebrow eyebrow--tick">How to engage us</p>
-          <h2 class="display" style="margin-top:1rem;max-width:14ch">Three ways to work together.</h2>
-        </div>
-        <p class="lead sec-head__lead">We scope the work first, then quote against it — no fixed packages, no padding.</p>
-      </div>
-      <div class="wrap models reveal">
-        <div class="model">
-          <span class="model__tag">Continuous</span>
-          <h3>Monthly retainer</h3>
-          <p>A standing team for your day-to-day admin. Best when the work is ongoing and you want one predictable cost.</p>
-          <ul><li>Dedicated account lead</li><li>Agreed monthly scope</li><li>Regular reporting</li></ul>
-        </div>
-        <div class="model">
-          <span class="model__tag">Defined</span>
-          <h3>Project-based</h3>
-          <p>A fixed scope with a clear end — a records clean-up, a licensing round, a documentation overhaul.</p>
-          <ul><li>Scoped deliverables</li><li>Set timeline</li><li>Fixed quote</li></ul>
-        </div>
-        <div class="model">
-          <span class="model__tag">Flexible</span>
-          <h3>Scalable on-demand</h3>
-          <p>Hours when you need them, for overflow or seasonal peaks. Turn support up and down as the calendar demands.</p>
-          <ul><li>Pay for what you use</li><li>Fast to activate</li><li>No long commitment</li></ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ INDUSTRIES TEASER ============================ -->
-    <section class="section section--tight">
-      <div class="wrap sec-head reveal">
-        <div>
-          <p class="eyebrow eyebrow--tick">Who we serve</p>
-          <h2 class="display" style="margin-top:1rem;max-width:16ch">Built for the way UAE businesses actually run.</h2>
-        </div>
-        <p class="lead sec-head__lead">Trading and import-export, professional services, real estate, healthcare, F&amp;B and construction — each with its own admin rhythm.</p>
-      </div>
-      <div class="wrap reveal"><a class="link-under" href="industries/">Explore industries</a></div>
-    </section>
-
-    <!-- ============================ FAQ ============================ -->
-    <section class="section">
-      <div class="wrap sec-head reveal">
-        <div>
-          <p class="eyebrow eyebrow--tick">Good questions</p>
-          <h2 class="display" style="margin-top:1rem;max-width:12ch">Before you ask.</h2>
-        </div>
-      </div>
-      <div class="wrap faq reveal">
-        <details><summary>What exactly are administrative management services? <span class="sign">+</span></summary><div class="faq__a">It's the operational back office of your business, handled by an external team: documentation and records, HR paperwork, correspondence, data management, government processes and drafting. You keep control and visibility; we do the running.</div></details>
-        <details><summary>Do you work with free-zone and mainland companies? <span class="sign">+</span></summary><div class="faq__a">Yes. We support mainland and free-zone businesses with document organisation, deadline tracking and administrative follow-up, subject to applicable authorisations.</div></details>
-        <details><summary>How do you protect confidential information? <span class="sign">+</span></summary><div class="faq__a">Every engagement runs under a signed confidentiality agreement, with role-based access to your data and documented handling procedures. Your records remain yours, and access is limited to the people doing the work.</div></details>
-        <details><summary>How does pricing work? <span class="sign">+</span></summary><div class="faq__a">We scope the work first, then quote — via a monthly retainer, a project fee, or on-demand hours. No fixed packages, and no charging for scope you don't use.</div></details>
-        <details><summary>Can we start small and expand later? <span class="sign">+</span></summary><div class="faq__a">Yes. Many clients begin with a single service or a one-off project and widen the scope once the working relationship is established.</div></details>
-        <details><summary>Who is our point of contact? <span class="sign">+</span></summary><div class="faq__a">A dedicated account lead who knows your business, backed by a continuity partner so work never stalls during leave or peak periods.</div></details>
-      </div>
-    </section>
-
-    <!-- ============================ CTA ============================ -->
-    <section class="section section--ink cta-strip">
-      <div class="wrap reveal">
-        <h2 class="display">Let's simplify your <em>administration.</em></h2>
-        <p class="lead">Tell us where the paperwork piles up. We'll show you how quiet it can get.</p>
-        <div class="cta-strip__row">
-          <a class="btn btn--primary" href="contact/">Book a free consultation <span class="arw">→</span></a>
-          <a class="btn btn--ghost" href="services/">Browse services</a>
+          <p class="lead">Tell us what your team needs help with. We’ll agree the scope and how we can work together.</p>
+          <a class="btn btn--primary" href="contact/">Contact PayEye</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ============================ FOOTER ============================ -->
   <footer class="site-foot">
     <div class="wrap">
       <div class="foot-grid">
-        <div class="foot-brand">
-          <a class="foot-brand__link" href="./"><img src="assets/brand/payeye-dark.png" width="1004" height="348" alt="PayEye Administrative Solutions Ltd" loading="lazy" /></a>
-          <p>Administrative Management Services for businesses across Dubai and the wider UAE. Accurate. Confidential. Reliable.</p>
-        </div>
-        <div class="foot-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services/#documentation">Documentation</a></li>
-            <li><a href="services/#hr">HR admin</a></li>
-            <li><a href="services/#government">Government coordination</a></li>
-            <li><a href="services/#data">Data management</a></li>
-          </ul>
-        </div>
-        <div class="foot-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about/">About</a></li>
-            <li><a href="process/">Process</a></li>
-            <li><a href="industries/">Industries</a></li>
-            <li><a href="insights/">Insights</a></li>
-          </ul>
-        </div>
-        <div class="foot-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="contact/">617, Liberty House, DIFC, Dubai</a></li>
-            <li><a href="mailto:hello@payeye.ae">hello@payeye.ae</a></li>
-          </ul>
-        </div>
+        <a class="foot-brand__link" href="./">
+          <img src="assets/brand/payeye-dark.png" width="1004" height="348" alt="PayEye Administrative Solutions Ltd" loading="lazy" />
+        </a>
+        <address class="foot-contact">
+          <a href="mailto:hello@payeye.ae">hello@payeye.ae</a>
+          <a href="contact/">617, Liberty House, DIFC, Dubai</a>
+        </address>
       </div>
       <div class="foot-bottom">
-        <span>© <span data-year>2026</span> PayEye Administrative Solutions · Dubai, UAE</span>
-        <span><a href="privacy/">Privacy</a> · <a href="terms/">Terms</a></span>
+        <p>© <span data-year>2026</span> PayEye Administrative Solutions Ltd</p>
+        <nav aria-label="Legal">
+          <a href="privacy/">Privacy</a>
+          <a href="terms/">Terms</a>
+        </nav>
       </div>
     </div>
   </footer>
 
-  <!-- ============================ COOKIE NOTICE ============================ -->
-  <div class="cookie" role="dialog" aria-label="Cookie notice">
-    <p>We use only essential cookies to make this site work. Nothing tracks you across the web.</p>
-    <div class="cookie__row">
-      <button class="btn btn--primary" data-cookie="essential">Okay</button>
-      <a class="btn btn--ghost" href="privacy/">Privacy policy</a>
-    </div>
-  </div>
 
-  <script src="assets/js/main.js?v=3" defer></script>
+  <script src="assets/js/main.js?v=4" defer></script>
 </body>
 </html>

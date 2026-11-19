@@ -9,8 +9,6 @@
     return;
   }
 
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   /* ---- Current year in footer ------------------------------------------ */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
@@ -36,53 +34,6 @@
         setMenuOpen(false);
         toggle.focus();
       }
-    });
-  }
-
-  /* ---- Sticky header compaction ---------------------------------------- */
-  var head = document.querySelector(".site-head");
-  if (head) {
-    var onScroll = function () {
-      if (window.scrollY > 40) head.classList.add("is-compact");
-      else head.classList.remove("is-compact");
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
-
-  /* ---- Scroll reveal ---------------------------------------------------- */
-  var revealEls = document.querySelectorAll(".reveal");
-  if (revealEls.length && "IntersectionObserver" in window && !reduce) {
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-    );
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add("is-in"); });
-  }
-
-  /* ---- Cookie notice (privacy-first, no tracking loaded) ---------------- */
-  var cookie = document.querySelector(".cookie");
-  if (cookie) {
-    var KEY = "payeye_cookie_choice";
-    var stored = null;
-    try { stored = window.localStorage.getItem(KEY); } catch (e) {}
-    if (!stored) {
-      window.setTimeout(function () { cookie.classList.add("is-in"); }, 1200);
-    }
-    cookie.querySelectorAll("[data-cookie]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        try { window.localStorage.setItem(KEY, btn.getAttribute("data-cookie")); } catch (e) {}
-        cookie.classList.remove("is-in");
-      });
     });
   }
 
