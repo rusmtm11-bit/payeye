@@ -37,9 +37,10 @@
     });
   }
 
-  /* ---- Contact form: friendly UX around the 3rd-party endpoint ---------- */
+  /* ---- Contact form: open a draft in the visitor's email app ---------- */
   var form = document.querySelector("[data-contact-form]");
-  if (form) {
+  var contactEmail = document.querySelector("#contact-email");
+  if (form && contactEmail) {
     var email = form.elements.namedItem("email");
     var emailError = form.querySelector("#email-error");
     var phone = form.elements.namedItem("phone");
@@ -75,28 +76,25 @@
     }
 
     form.addEventListener("submit", function (e) {
-      var endpoint = form.getAttribute("action") || "";
-      // If the placeholder endpoint hasn't been replaced, fall back to mailto.
-      if (endpoint.indexOf("REPLACE_WITH") !== -1 || endpoint === "" || endpoint === "#") {
-        e.preventDefault();
-        var data = new FormData(form);
-        if (phone && phone.value.trim() === phone.defaultValue.trim()) {
-          data.delete("phone");
-        }
-        var fields = [
-          ["Name", "name"], ["Company", "company"], ["Email", "email"],
-          ["Phone", "phone"], ["Service", "service"]
-        ];
-        var details = fields.map(function (field) {
-          var value = data.get(field[1]);
-          return value ? field[0] + ": " + value : "";
-        }).filter(Boolean);
-        var body = details.join("\n") + "\n\n" + data.get("message");
-        window.location.href =
-          "mailto:office@payeyesolutions.com?subject=" +
-          encodeURIComponent("Website enquiry — " + data.get("name")) +
-          "&body=" + encodeURIComponent(body);
+      e.preventDefault();
+      var data = new FormData(form);
+      if (phone && phone.value.trim() === phone.defaultValue.trim()) {
+        data.delete("phone");
       }
+      var fields = [
+        ["Name", "name"], ["Company", "company"], ["Email", "email"],
+        ["Phone", "phone"], ["Service", "service"]
+      ];
+      var details = fields.map(function (field) {
+        var value = data.get(field[1]);
+        return value ? field[0] + ": " + value : "";
+      }).filter(Boolean);
+      var body = details.join("\n") + "\n\n" + data.get("message");
+      window.location.href =
+        contactEmail.getAttribute("href") + "?subject=" +
+        encodeURIComponent("Website enquiry — " + data.get("name")) +
+        "&body=" + encodeURIComponent(body);
     });
+    form.hidden = false;
   }
 })();
