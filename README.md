@@ -75,8 +75,6 @@ Do a project-wide search for each item and replace it everywhere it appears.
 | `https://www.payeye.ae` | canonical, OG tags, JSON-LD, sitemap, robots | your live domain |
 | `+971-XX-XXX-XXXX` / `+971XXXXXXXXX` | header/footer, contact, JSON-LD | real phone number |
 | `971XXXXXXXXX` (in `wa.me/...`) | footer, contact | real WhatsApp number (international format, no `+`) |
-| `hello@payeye.ae` | footer, contact, policies, JSON-LD | real email |
-| `617, Liberty House, DIFC` | footer, contact, JSON-LD | confirm the exact address |
 | `REPLACE_WITH_FORM_ENDPOINT` | `contact.html` (form `action`) | your Formspree/Web3Forms endpoint (see below) |
 | Metrics `40–60%`, `15+`, etc. | `index.html` metrics band | real, verified figures |
 | Placeholder testimonials | `index.html` testimonials | real, approved client quotes |
@@ -86,7 +84,7 @@ Search hints: every editable spot is flagged in the HTML with a `<!-- CLIENT: ..
 
 ### Contact form
 
-The form currently posts to `REPLACE_WITH_FORM_ENDPOINT`. Until you set a real endpoint, the JS falls back to opening the visitor's email app addressed to `hello@payeye.ae`. To make it submit properly:
+The form currently posts to `REPLACE_WITH_FORM_ENDPOINT`. Until you set a real endpoint, the JS falls back to opening the visitor's email app addressed to `office@payeyesolutions.com`. To make it submit properly:
 
 1. Create a free form at **[Formspree](https://formspree.io)** or **[Web3Forms](https://web3forms.com)**.
 2. Copy your endpoint URL (Formspree looks like `https://formspree.io/f/abcdwxyz`).

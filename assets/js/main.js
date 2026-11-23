@@ -56,7 +56,7 @@
         }).filter(Boolean);
         var body = details.join("\n") + "\n\n" + data.get("message");
         window.location.href =
-          "mailto:hello@payeye.ae?subject=" +
+          "mailto:office@payeyesolutions.com?subject=" +
           encodeURIComponent("Website enquiry — " + data.get("name")) +
           "&body=" + encodeURIComponent(body);
       }
