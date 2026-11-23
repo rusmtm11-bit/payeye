@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/styles.css?v=4" />
+  <link rel="stylesheet" href="../assets/css/styles.css?v=5" />
   
 </head>
 <body>
@@ -64,8 +64,16 @@
             <div class="form-grid">
               <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required /></div>
               <div class="field"><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization" /></div>
-              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" /></div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error" required />
+                <small id="email-error" class="field__error" hidden>Enter an email address with @, such as name@example.com.</small>
+              </div>
+              <div class="field">
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" value="+971 " aria-describedby="phone-hint" />
+                <small id="phone-hint" class="field__hint">For a number outside the UAE, replace +971 with your country code.</small>
+              </div>
               <div class="field field--full"><label for="service">Service of interest</label>
                 <select id="service" name="service">
                   <option value="">Select a service…</option>
@@ -117,6 +125,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/main.js?v=5" defer></script>
+  <script src="../assets/js/main.js?v=6" defer></script>
 </body>
 </html>

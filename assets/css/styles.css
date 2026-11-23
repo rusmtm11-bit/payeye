@@ -215,7 +215,11 @@ h2.display { font-size: var(--step-3); }
 .contact-card a { text-decoration: underline; text-underline-offset: .18em; }
 #contact-form-note { margin-bottom: 1rem; }
 .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-.field { display: grid; gap: .35rem; min-width: 0; }
+.field { display: grid; align-content: start; gap: .35rem; min-width: 0; }
+.field__hint, .field__error { font-size: .875rem; }
+.field__hint { color: var(--stone); }
+.field__error { color: #9b2929; }
+.field input[aria-invalid="true"] { border-color: #9b2929; }
 .field--full { grid-column: 1 / -1; }
 .field label { font-weight: 600; }
 .field input, .field select, .field textarea {

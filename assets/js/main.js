@@ -40,12 +40,49 @@
   /* ---- Contact form: friendly UX around the 3rd-party endpoint ---------- */
   var form = document.querySelector("[data-contact-form]");
   if (form) {
+    var email = form.elements.namedItem("email");
+    var emailError = form.querySelector("#email-error");
+    var phone = form.elements.namedItem("phone");
+
+    if (email && emailError) {
+      function updateEmailError() {
+        var invalid = email.validity.typeMismatch;
+        emailError.hidden = !invalid;
+        if (invalid) email.setAttribute("aria-invalid", "true");
+        else email.removeAttribute("aria-invalid");
+      }
+
+      email.addEventListener("blur", updateEmailError);
+      email.addEventListener("invalid", updateEmailError);
+      email.addEventListener("input", function () {
+        if (!emailError.hidden) updateEmailError();
+      });
+    }
+
+    if (phone) {
+      phone.addEventListener("input", function () {
+        // Typing a second international dialling prefix replaces the UAE default.
+        var international = phone.value.replace(/^\+971\s*(?=\+|00)/, "");
+        if (international !== phone.value) phone.value = international;
+      });
+      phone.addEventListener("paste", function (event) {
+        var pasted = event.clipboardData?.getData("text").trim();
+        if (phone.value.trim() === phone.defaultValue.trim() && /^(?:\+|00)\s*\d/.test(pasted || "")) {
+          event.preventDefault();
+          phone.value = pasted;
+        }
+      });
+    }
+
     form.addEventListener("submit", function (e) {
       var endpoint = form.getAttribute("action") || "";
       // If the placeholder endpoint hasn't been replaced, fall back to mailto.
       if (endpoint.indexOf("REPLACE_WITH") !== -1 || endpoint === "" || endpoint === "#") {
         e.preventDefault();
         var data = new FormData(form);
+        if (phone && phone.value.trim() === phone.defaultValue.trim()) {
+          data.delete("phone");
+        }
         var fields = [
           ["Name", "name"], ["Company", "company"], ["Email", "email"],
           ["Phone", "phone"], ["Service", "service"]
